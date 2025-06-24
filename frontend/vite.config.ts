@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "./", // Use relative paths for better deployment compatibility
+  base: "/", // Use absolute paths for Render.com deployment
   server: {
     host: "::",
     port: 8080,
