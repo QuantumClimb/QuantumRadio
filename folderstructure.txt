@@ -1,0 +1,14 @@
+quantum-radio/
+├── frontend/                  # React or HTML frontend
+├── backend/
+│   ├── main.py                # FastAPI app
+│   ├── routes/
+│   │   └── tracks.py          # API for listing tracks
+│   ├── services/
+│   │   └── scraper.py         # Playlist scraping logic
+│   │   └── audio_downloader.py
+│   ├── data/
+│   │   └── playlist_tracks.json
+│   └── audio/
+├── .env
+└── README.md

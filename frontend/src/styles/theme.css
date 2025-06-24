@@ -1,0 +1,110 @@
+/**
+ * Quantum Radio Brand Theme
+ * Official color palette and design system variables
+ */
+
+:root {
+  /* Primary Brand Colors */
+  --quantum-radiant-gold: #F4B843;      /* Primary accent, buttons, highlights */
+  --quantum-neon-sky-blue: #2DB6FF;     /* Secondary accent, links, interactive elements */
+  --quantum-electric-blue-glow: #00CFFF; /* Glow effects, hover states, active elements */
+  --quantum-midnight-navy: #0C0F1E;     /* Primary background, dark sections */
+  --quantum-bronze-shadow: #924C14;     /* Subtle shadows, depth elements */
+  --quantum-light-champagne: #FFEAC3;   /* Light text, subtle highlights */
+  --quantum-cool-gray: #B5B8C2;         /* Secondary text, muted elements */
+
+  /* HSL Variants for Better Control */
+  --quantum-gold-hsl: 38, 88%, 62%;     /* #F4B843 in HSL */
+  --quantum-sky-blue-hsl: 204, 98%, 58%; /* #2DB6FF in HSL */
+  --quantum-electric-hsl: 188, 100%, 50%; /* #00CFFF in HSL */
+  --quantum-navy-hsl: 225, 50%, 9%;     /* #0C0F1E in HSL */
+  --quantum-bronze-hsl: 24, 75%, 33%;   /* #924C14 in HSL */
+  --quantum-champagne-hsl: 38, 100%, 88%; /* #FFEAC3 in HSL */
+  --quantum-gray-hsl: 225, 15%, 70%;    /* #B5B8C2 in HSL */
+
+  /* Semantic Color Mappings */
+  --quantum-primary: var(--quantum-radiant-gold);        /* Main brand color */
+  --quantum-secondary: var(--quantum-neon-sky-blue);     /* Secondary brand color */
+  --quantum-accent: var(--quantum-electric-blue-glow);   /* Accent/highlight color */
+  --quantum-dark: var(--quantum-midnight-navy);          /* Dark backgrounds */
+  --quantum-light: var(--quantum-light-champagne);       /* Light text/elements */
+  --quantum-muted: var(--quantum-cool-gray);             /* Muted/secondary text */
+  --quantum-shadow: var(--quantum-bronze-shadow);        /* Shadows and depth */
+
+  /* Opacity Variants for Layering */
+  --quantum-primary-10: hsla(var(--quantum-gold-hsl), 0.1);      /* Very subtle overlay */
+  --quantum-primary-20: hsla(var(--quantum-gold-hsl), 0.2);      /* Light overlay */
+  --quantum-primary-50: hsla(var(--quantum-gold-hsl), 0.5);      /* Medium overlay */
+  --quantum-primary-80: hsla(var(--quantum-gold-hsl), 0.8);      /* Strong overlay */
+
+  --quantum-secondary-10: hsla(var(--quantum-sky-blue-hsl), 0.1);
+  --quantum-secondary-20: hsla(var(--quantum-sky-blue-hsl), 0.2);
+  --quantum-secondary-50: hsla(var(--quantum-sky-blue-hsl), 0.5);
+  --quantum-secondary-80: hsla(var(--quantum-sky-blue-hsl), 0.8);
+
+  --quantum-accent-10: hsla(var(--quantum-electric-hsl), 0.1);
+  --quantum-accent-20: hsla(var(--quantum-electric-hsl), 0.2);
+  --quantum-accent-50: hsla(var(--quantum-electric-hsl), 0.5);
+  --quantum-accent-80: hsla(var(--quantum-electric-hsl), 0.8);
+
+  --quantum-dark-50: hsla(var(--quantum-navy-hsl), 0.5);
+  --quantum-dark-80: hsla(var(--quantum-navy-hsl), 0.8);
+  --quantum-dark-95: hsla(var(--quantum-navy-hsl), 0.95);
+
+  /* Glow Effects */
+  --quantum-glow-primary: 0 0 20px var(--quantum-primary-50);
+  --quantum-glow-secondary: 0 0 20px var(--quantum-secondary-50);
+  --quantum-glow-accent: 0 0 20px var(--quantum-accent-50);
+  --quantum-glow-soft: 0 4px 20px var(--quantum-accent-20);
+
+  /* Gradients */
+  --quantum-gradient-primary: linear-gradient(135deg, var(--quantum-primary), var(--quantum-secondary));
+  --quantum-gradient-accent: linear-gradient(135deg, var(--quantum-accent), var(--quantum-secondary));
+  --quantum-gradient-dark: linear-gradient(135deg, var(--quantum-dark), #1a1f35);
+  --quantum-gradient-glass: linear-gradient(135deg, var(--quantum-primary-10), var(--quantum-secondary-10));
+
+  /* Text Colors */
+  --quantum-text-primary: var(--quantum-light);          /* Main text color */
+  --quantum-text-secondary: var(--quantum-muted);        /* Secondary text */
+  --quantum-text-accent: var(--quantum-accent);          /* Accent text */
+  --quantum-text-muted: hsla(var(--quantum-gray-hsl), 0.7); /* Very muted text */
+
+  /* Surface Colors */
+  --quantum-surface-primary: var(--quantum-dark);        /* Main background */
+  --quantum-surface-secondary: hsla(var(--quantum-navy-hsl), 0.8); /* Card backgrounds */
+  --quantum-surface-tertiary: hsla(var(--quantum-navy-hsl), 0.6);  /* Elevated surfaces */
+  --quantum-surface-glass: hsla(var(--quantum-navy-hsl), 0.4);     /* Glass morphism */
+
+  /* Border Colors */
+  --quantum-border-primary: var(--quantum-accent-20);    /* Main borders */
+  --quantum-border-secondary: var(--quantum-primary-20); /* Secondary borders */
+  --quantum-border-muted: hsla(var(--quantum-gray-hsl), 0.2); /* Subtle borders */
+
+  /* Interactive States */
+  --quantum-hover-primary: var(--quantum-primary-80);    /* Primary hover */
+  --quantum-hover-secondary: var(--quantum-secondary-80); /* Secondary hover */
+  --quantum-hover-accent: var(--quantum-accent-80);      /* Accent hover */
+  --quantum-active-primary: var(--quantum-primary);      /* Active state */
+  --quantum-focus-ring: var(--quantum-accent-50);        /* Focus outlines */
+
+  /* Status Colors */
+  --quantum-success: #10B981;          /* Success states */
+  --quantum-warning: var(--quantum-primary); /* Warning states (using gold) */
+  --quantum-error: #EF4444;            /* Error states */
+  --quantum-info: var(--quantum-secondary); /* Info states (using sky blue) */
+}
+
+/* Dark theme adjustments (if needed for theme switching) */
+[data-theme="dark"] {
+  /* Already optimized for dark theme */
+}
+
+/* Light theme variant (optional) */
+[data-theme="light"] {
+  --quantum-dark: #FFFFFF;
+  --quantum-light: var(--quantum-midnight-navy);
+  --quantum-text-primary: var(--quantum-midnight-navy);
+  --quantum-text-secondary: var(--quantum-bronze-shadow);
+  --quantum-surface-primary: #FFFFFF;
+  --quantum-surface-secondary: var(--quantum-light-champagne);
+} 
