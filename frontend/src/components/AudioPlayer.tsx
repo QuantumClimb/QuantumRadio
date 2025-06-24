@@ -21,16 +21,25 @@ export function AudioPlayer({ videoId, onEnded }: AudioPlayerProps) {
   const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
+    if (!videoId) {
+      console.warn('No video ID provided to AudioPlayer');
+      return;
+    }
+
     loadCurrentTrack();
     youtubeService.loadVideo(videoId);
     youtubeService.onStateChange(setIsPlaying);
-    youtubeService.setVolume(volume);
+    
+    // Wait for player to be ready before setting volume
+    youtubeService.onPlayerReady(() => {
+      youtubeService.setVolume(volume);
+    });
 
     // Set up progress tracking
     const progressInterval = setInterval(() => {
       const current = youtubeService.getCurrentTime();
       const total = youtubeService.getDuration();
-      if (current && total) {
+      if (current && total && total > 0) {
         setCurrentTime(current);
         setDuration(total);
         setProgress((current / total) * 100);
@@ -41,7 +50,10 @@ export function AudioPlayer({ videoId, onEnded }: AudioPlayerProps) {
   }, [videoId]);
 
   useEffect(() => {
-    youtubeService.setVolume(volume);
+    // Only set volume if player is ready
+    youtubeService.onPlayerReady(() => {
+      youtubeService.setVolume(volume);
+    });
   }, [volume]);
 
   const loadCurrentTrack = async () => {
