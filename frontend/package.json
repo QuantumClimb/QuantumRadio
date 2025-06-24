@@ -13,8 +13,8 @@
     "typescript"
   ],
   "author": {
-    "name": "QuantumClimb",
-    "email": "qc@quantum-climb.com",
+    "name": "QuantumClimb", 
+    "email": "QuantumClimb@users.noreply.github.com",
     "url": "https://github.com/QuantumClimb"
   },
   "repository": {
